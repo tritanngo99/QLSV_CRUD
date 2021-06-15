@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Trang chủ </title>
+        <style> 
+            a{text-decoration: none;}
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <td> ID </td>
+                <td> Mã số Sinh viên </td>
+                <td> Họ và tên </td>
+                <td> Khoa </td>
+                <td> Giới tính </td>
+                {% if request.user.is_superuser %}
+                <td> Update </td>
+                <td> Delete </td>
+                {% endif %}
+            </thead>
+            {% for student in content %}
+            <tr>
+                <td> {{student.id}} </td>
+                <td> {{student.masv}} </td>
+                <td> {{student.hoten}} </td>
+                <td> {{student.khoa}} </td>
+                <td> {{student.gioitinh}} </td>
+                {% if request.user.is_superuser %}
+                <td> <button type="submit"> <a href="edit/{{student.id}}"> Edit </a> </td>
+                <td> <button type="submit"> <a href="delete/{{student.id}}"> Delete </a> </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <button type="submit" > <a href="logout">Logout</a> </button>
+        </div>
+        {% if request.user.is_superuser %}
+        <div>
+            <button type="submit" > <a href="insert">Add</a> </button>
+        </div>
+        {% endif %}
+    </body>
+</html>

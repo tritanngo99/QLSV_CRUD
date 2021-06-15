@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1> Sửa </h1>
+            <div class="input-box">
+                <input type="text" placeholder="MSSV" name="mssv" value="{{content.masv}}">
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Họ và tên" name="hoten" value="{{content.hoten}}">
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Khoa" name="khoa" value="{{content.khoa}}">
+            </div>
+            <div class="input-box">
+                <select name="gt" value="{{content.gioitinh}}">
+                    <option value="Nam"> Nam </option>
+                    <option value="Nữ" > Nữ </option>
+                </select>
+            </div>
+            <div class="btn-box">
+                <button type="submit"> Cập nhật </button>
+            </div>
+        </form>
+    </body>
+</html>

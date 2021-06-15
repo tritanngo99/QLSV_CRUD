@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1> Thêm </h1>
+            <div class="input-box">
+                <input type="text" placeholder="MSSV" name="mssv">
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Họ và tên" name="hoten">
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Khoa" name="khoa">
+            </div>
+            <div class="input-box">
+                <select name="gt">
+                    <option value="Nam"> Nam </option>
+                    <option value="Nữ" > Nữ </option>
+                </select>
+            </div>
+            <div class="btn-box">
+                <button type="submit"> Thêm </button>
+            </div>
+        </form>
+    </body>
+</html>
